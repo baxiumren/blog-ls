@@ -10,7 +10,7 @@ PORT="80"          # 80 = akses via http://IP + Cloudflare domain jalan
 echo "==> [1/6] Install paket sistem..."
 apt update -y
 apt install -y php${PHP_VER} php${PHP_VER}-fpm php${PHP_VER}-cli php${PHP_VER}-sqlite3 \
-  php${PHP_VER}-mbstring php${PHP_VER}-curl php${PHP_VER}-xml php${PHP_VER}-zip \
+  php${PHP_VER}-mbstring php${PHP_VER}-curl php${PHP_VER}-xml php${PHP_VER}-zip php${PHP_VER}-gd \
   unzip nginx git curl cron
 
 if ! command -v composer &>/dev/null; then
