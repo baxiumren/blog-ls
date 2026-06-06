@@ -32,12 +32,15 @@
     // +1 menit tiap 60 detik, cuma pas babak jalan (resync dari server tiap poll)
     function minuteTick() {
         var ticking = ['1H', '2H', 'ET'];
+        var caps = { '1H': 48, '2H': 100, 'ET': 130 }; // don't let a stuck match overflow past real time
         var changed = false;
         Object.keys(state).forEach(function (id) {
             var d = state[id];
             if (d && d.st === 'live' && ticking.indexOf(d.short) !== -1 && typeof d.min === 'number') {
-                d.min += 1;
-                changed = true;
+                if (d.min < (caps[d.short] || 100)) {
+                    d.min += 1;
+                    changed = true;
+                }
             }
         });
         if (changed) paintAll();
