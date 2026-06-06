@@ -73,7 +73,9 @@ class CloudflareService
 
     public function setSslFull(string $zoneId): void
     {
-        $this->http()->patch("/zones/{$zoneId}/settings/ssl", ['value' => 'full']);
+        // 'flexible' = CF↔origin over HTTP (port 80) — matches our HTTP-only Nginx so ANY
+        // pointed domain works instantly without an origin cert (ideal for domain rotation).
+        $this->http()->patch("/zones/{$zoneId}/settings/ssl", ['value' => 'flexible']);
         $this->http()->patch("/zones/{$zoneId}/settings/always_use_https", ['value' => 'on']);
     }
 
