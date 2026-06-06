@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Matches - LiveScore')
-@section('description', 'Live football scores, fixtures and results from the Premier League, La Liga, Serie A, Bundesliga, World Cup and more. Real-time match updates, standings and stats on LiveScore.')
+@section('title', ($settings['home_title'] ?? '') ?: 'Skor Bola Live, Hasil & Jadwal Pertandingan')
+@section('description', ($settings['meta_description'] ?? '') ?: 'Skor bola live & hasil pertandingan real-time dari Liga Inggris, Champions, La Liga, Serie A & ratusan liga. Jadwal, klasemen & statistik di MahaBola.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode([
     '@'.'context' => 'https://schema.org',
