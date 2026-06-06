@@ -103,8 +103,8 @@ class InstallController extends Controller
                 'is_admin' => true,
             ]);
 
-            // 5. storage symlink
-            Artisan::call('storage:link');
+            // 5. storage symlink (non-fatal — needs public/ writable; can be created later)
+            try { Artisan::call('storage:link'); } catch (\Throwable $e) {}
 
             // 6. lock
             file_put_contents($this->lockPath(), 'Installed at ' . date('Y-m-d H:i:s'));

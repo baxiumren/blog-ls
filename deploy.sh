@@ -35,7 +35,7 @@ if [ ! -f database/database.sqlite ]; then
 fi
 
 echo "==> [4/6] Permission..."
-chown -R www-data:www-data storage bootstrap/cache database .env
+chown -R www-data:www-data "$APP_DIR"
 chmod -R 775 storage bootstrap/cache database
 chmod 664 .env
 
