@@ -13,7 +13,7 @@
 
 @section('schema')
 <script type="application/ld+json">{!! json_encode(array_filter([
-    '@context' => 'https://schema.org',
+    '@'.'context' => 'https://schema.org',
     '@type' => 'WebPage',
     'name' => $page->title,
     'description' => $pageMeta,
@@ -21,7 +21,7 @@
     'dateModified' => $page->updated_at->toIso8601String(),
 ]), JSON_UNESCAPED_SLASHES) !!}</script>
 <script type="application/ld+json">{!! json_encode([
-    '@context' => 'https://schema.org',
+    '@'.'context' => 'https://schema.org',
     '@type' => 'BreadcrumbList',
     'itemListElement' => [
         ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')],

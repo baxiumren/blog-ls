@@ -4,7 +4,7 @@
 @section('description', 'Browse all football leagues and competitions — Premier League, La Liga, Serie A, Champions League, World Cup and more. Tables, fixtures and results on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode([
-    '@context' => 'https://schema.org',
+    '@'.'context' => 'https://schema.org',
     '@type' => 'CollectionPage',
     'name' => 'All Football Leagues & Competitions',
     'url' => url()->current(),

@@ -4,7 +4,7 @@
 @section('description', 'Live football scores, fixtures and results from the Premier League, La Liga, Serie A, Bundesliga, World Cup and more. Real-time match updates, standings and stats on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode([
-    '@context' => 'https://schema.org',
+    '@'.'context' => 'https://schema.org',
     '@type' => 'CollectionPage',
     'name' => 'Live Football Scores & Matches',
     'url' => url('/'),

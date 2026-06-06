@@ -44,13 +44,13 @@
 
     {{-- Structured data --}}
     <script type="application/ld+json">{!! json_encode([
-        '@context' => 'https://schema.org',
+        '@'.'context' => 'https://schema.org',
         '@type' => 'WebSite',
         'name' => $siteName,
         'url' => \App\Models\Domain::activeBaseUrl(),
     ], JSON_UNESCAPED_SLASHES) !!}</script>
     <script type="application/ld+json">{!! json_encode(array_merge([
-        '@context' => 'https://schema.org',
+        '@'.'context' => 'https://schema.org',
         '@type' => 'Organization',
         'name' => $siteName,
         'url' => \App\Models\Domain::activeBaseUrl(),

@@ -5,7 +5,7 @@
 @section('schema')
 @php
     $matchSchema = array_filter([
-        '@context' => 'https://schema.org',
+        '@'.'context' => 'https://schema.org',
         '@type' => 'SportsEvent',
         'name' => $fixture->homeTeam->name . ' vs ' . $fixture->awayTeam->name,
         'sport' => 'Soccer',

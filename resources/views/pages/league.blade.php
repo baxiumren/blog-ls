@@ -4,7 +4,7 @@
 @section('description', $league->name . ' table, fixtures, results, top scorers and team stats. Follow the ' . $league->name . ' season live on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode(array_filter([
-    '@context' => 'https://schema.org',
+    '@'.'context' => 'https://schema.org',
     '@type' => 'SportsOrganization',
     'name' => $league->name,
     'sport' => 'Soccer',

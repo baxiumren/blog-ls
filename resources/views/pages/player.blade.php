@@ -4,7 +4,7 @@
 @section('description', $p['name'] . ' stats — goals, assists, appearances, ratings and career history' . ($primary ? ' for ' . $primary['team'] : '') . '. Full player profile on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode(array_filter([
-    '@context' => 'https://schema.org',
+    '@'.'context' => 'https://schema.org',
     '@type' => 'Person',
     'name' => $p['name'],
     'image' => $p['photo'] ?? null,

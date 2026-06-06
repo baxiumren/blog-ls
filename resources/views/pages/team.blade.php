@@ -4,7 +4,7 @@
 @section('description', $team->name . ' fixtures, results, full squad, player stats and league standings. Follow ' . $team->name . ' live scores and match schedule on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode(array_filter([
-    '@context' => 'https://schema.org',
+    '@'.'context' => 'https://schema.org',
     '@type' => 'SportsTeam',
     'name' => $team->name,
     'sport' => 'Soccer',
