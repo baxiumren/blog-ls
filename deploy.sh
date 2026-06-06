@@ -3,8 +3,8 @@ set -e
 
 # ============ EDIT INI ============
 APP_DIR="/var/www/livescore"
-PHP_VER="8.2"
-PORT="8080"          # ganti kalau mau port lain, misal 8080
+PHP_VER="8.3"
+PORT="80"          # 80 = akses via http://IP + Cloudflare domain jalan
 # ==================================
 
 echo "==> [1/6] Install paket sistem..."
