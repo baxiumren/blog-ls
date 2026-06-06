@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $p['name'] . ' - LiveScore')
+@section('title', $p['name'])
 @section('description', $p['name'] . ' stats — goals, assists, appearances, ratings and career history' . ($primary ? ' for ' . $primary['team'] : '') . '. Full player profile on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode(array_filter([

@@ -107,7 +107,8 @@ class SettingController extends Controller
                 'desc'  => 'Meta, analytics & verification.',
                 'fields' => [
                     'home_title'          => ['label' => 'Homepage title', 'type' => 'text', 'hint' => 'Title of the homepage (before the suffix). Leave blank to use the default. e.g. "Skor Bola Live, Hasil & Jadwal Pertandingan".'],
-                    'meta_title_suffix'   => ['label' => 'Title suffix', 'type' => 'text', 'hint' => 'Text added after every page title, e.g. " — MahaBola". Helps brand your tabs and search results.'],
+                    'meta_title_prefix'   => ['label' => 'Title prefix', 'type' => 'text', 'hint' => 'Text added BEFORE every page title, e.g. "MahaBola - ". Use this to put your brand at the front. Leave blank if you prefer the suffix.'],
+                    'meta_title_suffix'   => ['label' => 'Title suffix', 'type' => 'text', 'hint' => 'Text added AFTER every page title, e.g. " — MahaBola". Use prefix OR suffix, not both.'],
                     'meta_description'    => ['label' => 'Default meta description', 'type' => 'textarea', 'hint' => 'Fallback description for search engines and social shares when a page has none of its own.'],
                     'ga_id'               => ['label' => 'Google Analytics ID', 'type' => 'text', 'hint' => 'Your Google Analytics 4 measurement ID, e.g. G-XXXXXXXXXX. Leave blank to disable analytics.'],
                     'gtm_id'              => ['label' => 'Google Tag Manager ID', 'type' => 'text', 'hint' => 'Your Google Tag Manager container ID, e.g. GTM-XXXXXXX.'],

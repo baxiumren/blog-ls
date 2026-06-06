@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'All Football Leagues & Competitions - LiveScore')
+@section('title', 'All Football Leagues & Competitions')
 @section('description', 'Browse all football leagues and competitions — Premier League, La Liga, Serie A, Champions League, World Cup and more. Tables, fixtures and results on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode([

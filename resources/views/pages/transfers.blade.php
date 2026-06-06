@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Transfers - LiveScore')
+@section('title', 'Transfers')
 @section('description', 'Latest football transfer news, rumours and confirmed deals across the Premier League, La Liga, Serie A and top leagues worldwide.')
 
 @section('content')

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Football News - LiveScore')
+@section('title', 'Football News')
 @section('description', 'Latest football news, transfer rumours, match previews and expert analysis from the Premier League, Champions League, World Cup and more.')
 @section('no-left', 'yes')
 @section('no-right', 'yes')

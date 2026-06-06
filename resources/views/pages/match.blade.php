@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $fixture->homeTeam->name . ' vs ' . $fixture->awayTeam->name . ' - LiveScore')
+@section('title', $fixture->homeTeam->name . ' vs ' . $fixture->awayTeam->name)
 @section('description', $fixture->homeTeam->name . ' vs ' . $fixture->awayTeam->name . ' — live score, lineups, stats, head-to-head and match details on LiveScore.')
 @section('schema')
 @php

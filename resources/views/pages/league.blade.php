@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $league->name . ' - LiveScore')
+@section('title', $league->name)
 @section('description', $league->name . ' table, fixtures, results, top scorers and team stats. Follow the ' . $league->name . ' season live on LiveScore.')
 @section('schema')
 <script type="application/ld+json">{!! json_encode(array_filter([

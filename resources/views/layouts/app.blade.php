@@ -6,9 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @php
     $siteName = ! empty($settings['site_name']) ? $settings['site_name'] : 'LiveScore';
+    $titlePrefix = $settings['meta_title_prefix'] ?? '';
     $titleSuffix = $settings['meta_title_suffix'] ?? '';
     $pageTitle = trim($__env->yieldContent('title'));
-    $metaTitle = $pageTitle ? $pageTitle . $titleSuffix : $siteName . ' — Live Football Scores, Fixtures & Results';
+    $metaTitle = $pageTitle ? $titlePrefix . $pageTitle . $titleSuffix : $siteName . ' — Live Football Scores, Fixtures & Results';
     $themeColor = ! empty($settings['theme_color']) ? $settings['theme_color'] : '#2563eb';
     $metaDesc = trim($__env->yieldContent('description')) ?: ($settings['meta_description'] ?? 'Live football scores, fixtures, results, standings and team & player stats from the Premier League, La Liga, World Cup and more.');
     $metaTitle = str_replace('LiveScore', $siteName, $metaTitle);
