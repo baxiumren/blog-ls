@@ -37,7 +37,7 @@ return [
 
     'api_football' => [
         'key' => env('API_FOOTBALL_KEY'),
-        'url' => env('API_FOOTBALL_URL'),
+        'url' => env('API_FOOTBALL_URL', 'https://v3.football.api-sports.io'),
     ],
 
 ];
