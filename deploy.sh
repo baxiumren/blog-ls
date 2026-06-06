@@ -11,7 +11,7 @@ echo "==> [1/6] Install paket sistem..."
 apt update -y
 apt install -y php${PHP_VER} php${PHP_VER}-fpm php${PHP_VER}-cli php${PHP_VER}-sqlite3 \
   php${PHP_VER}-mbstring php${PHP_VER}-curl php${PHP_VER}-xml php${PHP_VER}-zip \
-  unzip nginx git curl
+  unzip nginx git curl cron
 
 if ! command -v composer &>/dev/null; then
   curl -sS https://getcomposer.org/installer | php
@@ -59,6 +59,7 @@ rm -f /etc/nginx/sites-enabled/default
 nginx -t && systemctl reload nginx
 
 echo "==> [6/6] Cron (live score auto-update)..."
+systemctl enable --now cron
 ( crontab -l 2>/dev/null | grep -v "schedule:run"; \
   echo "* * * * * cd ${APP_DIR} && php artisan schedule:run >> /dev/null 2>&1" ) | crontab -
 
