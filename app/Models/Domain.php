@@ -27,9 +27,17 @@ class Domain extends Model
         });
     }
 
-    /** Base URL of the primary domain, e.g. https://example.com (no trailing slash). Falls back to APP_URL. */
+    /** Canonical base URL for SEO. Priority: manual SEO setting → primary domain → APP_URL. No trailing slash. */
     public static function activeBaseUrl(): string
     {
+        // Manual SEO override (Settings → SEO → Canonical domain), e.g. https://www.maha-bola.com
+        $manual = Setting::get('canonical_domain');
+        if (filled($manual)) {
+            $manual = rtrim(trim($manual), '/');
+
+            return preg_match('#^https?://#', $manual) ? $manual : 'https://' . ltrim($manual, '/');
+        }
+
         $primary = Cache::remember('domain.primary', 3600, fn () => static::where('is_primary', true)->value('domain'));
 
         return $primary ? 'https://' . $primary : rtrim(config('app.url'), '/');
