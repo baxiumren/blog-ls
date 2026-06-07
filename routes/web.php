@@ -135,8 +135,9 @@ Route::get('/live', function (\App\Services\ApiFootball $api) {
     return response()->json($data);
 });
 Route::get('/robots.txt', function () {
-    return response("User-agent: *\nAllow: /\n\nSitemap: " . url('/sitemap.xml') . "\n", 200)
-        ->header('Content-Type', 'text/plain');
+    $robots = "User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /install\n\nSitemap: " . \App\Models\Domain::to('/sitemap.xml') . "\n";
+
+    return response($robots, 200)->header('Content-Type', 'text/plain');
 });
 Route::get('/unsubscribe/{token}', [\App\Http\Controllers\UnsubscribeController::class, 'show']);
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
