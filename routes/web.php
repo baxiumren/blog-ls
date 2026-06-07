@@ -135,7 +135,12 @@ Route::get('/live', function (\App\Services\ApiFootball $api) {
     return response()->json($data);
 });
 Route::get('/robots.txt', function () {
-    $robots = "User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /install\n\nSitemap: " . \App\Models\Domain::to('/sitemap.xml') . "\n";
+    $robots = "User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /install\n";
+    $custom = trim((string) \App\Models\Setting::get('robots_custom'));
+    if ($custom !== '') {
+        $robots .= $custom . "\n";
+    }
+    $robots .= "\nSitemap: " . \App\Models\Domain::to('/sitemap.xml') . "\n";
 
     return response($robots, 200)->header('Content-Type', 'text/plain');
 });
@@ -217,6 +222,9 @@ Route::middleware('admin')->prefix('admin')->group(function () {
         Route::post('/domains/{domain}/redirect', [\App\Http\Controllers\Admin\DomainController::class, 'redirect'])->name('admin.domains.redirect');
         Route::get('/logs', [\App\Http\Controllers\Admin\LogController::class, 'index'])->name('admin.logs');
         Route::post('/logs/clear', [\App\Http\Controllers\Admin\LogController::class, 'clear'])->name('admin.logs.clear');
+        Route::get('/seo', [\App\Http\Controllers\Admin\SeoController::class, 'index'])->name('admin.seo');
+        Route::post('/seo/robots', [\App\Http\Controllers\Admin\SeoController::class, 'saveRobots'])->name('admin.seo.robots');
+        Route::post('/seo/sitemap-clear', [\App\Http\Controllers\Admin\SeoController::class, 'clearSitemap'])->name('admin.seo.sitemap-clear');
 
         Route::get('/settings/{group?}', [SettingController::class, 'show'])->name('admin.settings');
         Route::post('/settings/{group}', [SettingController::class, 'update'])->name('admin.settings.update');

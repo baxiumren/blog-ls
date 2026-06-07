@@ -33,7 +33,7 @@ class Fixture extends Model
     }
 
     public function prediction() { return $this->hasOne(Prediction::class); }
-    
+
     public function highlight()
     {
         return $this->hasOne(Highlight::class);

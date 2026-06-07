@@ -52,6 +52,7 @@
                         ['Health', '/admin/health', 'admin/health*', 'fa-solid fa-stethoscope', false, true],
                         ['Domains', '/admin/domains', 'admin/domains*', 'fa-solid fa-globe', false, true],
                         ['Logs', '/admin/logs', 'admin/logs*', 'fa-solid fa-file-lines', false, true],
+                        ['Sitemap & SEO', '/admin/seo', 'admin/seo*', 'fa-solid fa-sitemap', false, true],
                     ],
                     'Account' => [
                         ['View site', '/', '', 'fa-solid fa-arrow-up-right-from-square', true],
